@@ -1,97 +1,72 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Tender Management System  
 
-# Getting Started
+A React Native and Node.js-based tender management system that allows **admins** to create and manage tenders, while **users** can view and place bids.  
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 🚀 Tech Stack  
+- **Frontend:** React Native
+- **Backend:** Node.js, Express.js, File-based JSON storage 
 
-## Step 1: Start Metro
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 📌 Features  
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### Admin Panel  
+- Create tenders with details (Name, Description, Start Time, End Time, Buffer Time)  
+- View & manage all created tenders  
+- Extend tender end time if a bid is placed in the last 5 minutes  
+- View all bids sorted in ascending order  
 
+### User Panel  
+- View available tenders  
+- Submit bids for tenders  
+- View the lowest bid for each tender  
+- Get notified if a bid is placed in the last 5 minutes  
+
+### Bids Management  
+- Display bids in tabular format (Company Name, Bid Cost, Bid Time)  
+- Highlight bids placed in the last 5 minutes  
+
+## 🛠️ Setup Instructions  
+
+### 1️⃣ Clone the Repository  
 ```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+git clone https://github.com/pushkarsharma24/Tender-Management-System-Frontend.git
+cd tender-management-system
 ```
 
-## Step 2: Build and run your app
+### 2️⃣ Install Dependencies  
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
+```
+#### Frontend (React Native)
 ```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+cd frontend
+npm install
 ```
 
-### iOS
+## 3️⃣ Run the Project  
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
+### Frontend (React Native)
 ```sh
-bundle install
+cd frontend
+npx react-native start
+npx react-native run-android  # For Android  
+npx react-native run-ios      # For iOS  
 ```
 
-Then, and every time you update your native dependencies, run:
+## 🔑 Authentication Flow  
 
-```sh
-bundle exec pod install
-```
+1️⃣ **Admin Login:**  
+- Admin enters credentials → Redirected to **Role Selection**  
+- Can choose **Admin Panel** or **User Panel**  
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+2️⃣ **User Login:**  
+- User enters credentials → Redirected directly to **User Dashboard**  
 
-```sh
-# Using npm
-npm run ios
+📌 **Credentials For Login **  
+```json
+[
+  "username": "admin", "password": "admin123", "role": "admin"
+  "username": "user", "password": "user123", "role": "user"
+]
 
-# OR using Yarn
-yarn ios
-```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+**🎯 Developed By:** *Pushkar Sharma* 🚀🔥  
